@@ -12,8 +12,12 @@ class App extends React.Component {
 
   componentDidMount(){
     fetch('/users')
-    .then(res=>res.json())
-    .then(data=>this.setState({username:data.userName})) 
+      .then(res=>res.json())
+      .then(data=>this.setState({username:data.userName}))
+    
+     fetch('/users/group')
+      .then(res=>res.json())
+      .then(data=>this.setState({devname:data.userName}))
   };
 
   render(){
@@ -21,6 +25,7 @@ class App extends React.Component {
     <div className="App">
       <p>Hello Node&React!!!</p>   
       <p>username : {this.state.username}</p>  
+      <p>devname : {this.state.devname}</p>
     </div>
   );
 }
