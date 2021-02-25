@@ -3,10 +3,9 @@ const router = express.Router();
 
 
 router.get("/",(req,res)=>{
-    res.json({userName : "Sejing"})
-})
-router.get("/group" , (req,res)=>{
-    res.json({userName : 'Develope'})
+    res.json({
+        username : "Sejing",
+        devname : "develope"})
 })
 
 module.exports = router;
