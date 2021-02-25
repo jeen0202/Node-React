@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const db = require("../lib/lowdb")
+// db.get('users').push({
+//     id:1,
+//     username:"sejin",
+//     dept:"develope"
+// }).write();
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());

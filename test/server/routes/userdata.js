@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
+const db = require('../../lib/lowdb')
 
 router.get("/",(req,res)=>{
-    res.json({
-        username : "Sejing",
-        devname : "develope"})
+    const userdata = db.get('users').value();
+    console.log('express userdata => ',userdata);
+    res.json(userdata)
 })
 
 module.exports = router;
