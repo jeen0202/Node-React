@@ -9,12 +9,20 @@ function ReadContent(props){
         .then(data=>setUserdata(data))         
        
     },[]);
+    
+    let lists= [];
+    for(let i = 0; i<userdata.length;i++){
+        lists.push(<p>name : {userdata[i].username} dept : {userdata[i].dept}</p>)
+    }
+                   
+    
     if(!userdata){setIsContent(false)}
     if(isContent){ 
         return(
             <div>
-            <p>{userdata}</p>
-            </div>
+            {lists}
+            </div>            
+                      
         )
     }
     else{
