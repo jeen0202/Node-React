@@ -12,7 +12,10 @@ function ReadContent(props){
     
     let lists= [];
     for(let i = 0; i<userdata.length;i++){
-        lists.push(<p>name : {userdata[i].username} dept : {userdata[i].dept}</p>)
+        lists.push(
+        <list>            
+        <div>name : {userdata[i].username} dept : {userdata[i].dept}</div>
+        </list>)
     }
                    
     
@@ -20,6 +23,7 @@ function ReadContent(props){
     if(isContent){ 
         return(
             <div>
+            <p>Hello Node&React!!!</p>
             {lists}
             </div>            
                       
