@@ -4,7 +4,7 @@ function ReadContent(props){
     const [isContent, setIsContent] = useState(true);
     const [userdata, setUserdata] = useState({});
     useEffect(()=>{        
-        fetch('/users')
+        fetch('/member/read')
         .then(res=>res.json())
         .then(data=>setUserdata(data))         
        
@@ -13,7 +13,8 @@ function ReadContent(props){
     let lists= [];
     for(let i = 0; i<userdata.length;i++){
         lists.push(
-        <list>            
+        <list>
+        <p> id : {userdata[i].id}</p>            
         <div>name : {userdata[i].username} dept : {userdata[i].dept}</div>
         </list>)
     }
