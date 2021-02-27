@@ -12,11 +12,11 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 const indexRouter = require('./routes/index');
-const userdataRouter = require('./routes/userdata');
+const memberRouter = require('./routes/member');
 
 app.use(cors());
 app.use(indexRouter);
-app.use('/users',userdataRouter);
+app.use('/member',memberRouter);
 
 app.listen(port, () => {
     console.log(`listen on port ${port}`);

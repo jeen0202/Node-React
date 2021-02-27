@@ -18,7 +18,7 @@ class App extends React.Component {
       _article = <ReadContent></ReadContent> 
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
-        fetch('http://localhost:3001/create' ,{
+        fetch('http://localhost:3001/member/create' ,{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',
