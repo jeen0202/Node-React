@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import './components.css';
 function ReadContent(props){
     console.log('ReadContent render');
     const [isContent, setIsContent] = useState(true);
@@ -12,11 +13,12 @@ function ReadContent(props){
     
     let lists= [];
     for(let i = 0; i<userdata.length;i++){
-        lists.push(
-        <list>
-        <p> id : {userdata[i].id}</p>            
-        <div>name : {userdata[i].username} dept : {userdata[i].dept}</div>
-        </list>)
+        lists.push(        
+        <pre class = "list">id : {userdata[i].id}<br></br>
+            name : {userdata[i].username}<br></br>
+            dept : {userdata[i].dept}</pre>
+        )
+        
     }
                    
     
