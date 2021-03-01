@@ -17,7 +17,15 @@ class App extends React.Component {
     var _article,_selectedMember = null;
     if(this.state.mode === "default"){
       _article = <ReadContent onUpdate= {(_id)=>{
-        fetch('http://locahhost:3001/member/update')
+        fetch('http://localhost:3001/member/update' ,{
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            },        
+          body : JSON.stringify({
+          'id' : _id
+          })
+        }) 
         .then(res=>res.json())
         .then(data=>_selectedMember =data) 
         .then(this.setState({mode:'update'})

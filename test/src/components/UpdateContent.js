@@ -4,9 +4,6 @@ function UpdateContent(props){
     console.log("UpdateContent render")
     const [member, setMember] = useState({});
     useEffect(()=>{
-        fetch('member/update')
-        .then(res=>res.json())
-        .then(data=>setMember(data))
     },[]);
 
     
@@ -18,8 +15,9 @@ function UpdateContent(props){
                 e.target.dept.value
             )
         }}>
-        <pre>username : <input type = "text" name = "username">{member.username}</input>
-        department : <input type = "text" name = "dept">{member.dept}</input></pre>
+        username : <input type = "text" name = "username">{member.username}</input><br></br><br></br>
+        department : <input type = "text" name = "dept">{member.dept}</input><br></br>
+        <input type = "submit" value = "update"></input>
         
         </form>
     )

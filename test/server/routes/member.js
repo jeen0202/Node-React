@@ -21,5 +21,11 @@ router.post("/create",(req,res,next)=>{
     res.end(console.log(`name : ${name} dept : ${dept}`))
     
 })
+router.post("/update",(req,res,next)=>{
+    let id = req.body.id;
+    let member = db.get('members').find({id:id}).value();
+    //console.log("Selected member : ",member);
+    res.json(member);
+})
 
 module.exports = router;
