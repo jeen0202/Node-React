@@ -19,7 +19,10 @@ function ReadContent(props){
             dept : {userdata[i].dept}<br></br>
             <input type = "button" value = "update" onClick = {()=>{
                 props.onUpdate(userdata[i].id)
-            }}></input></pre>
+            }}></input><input type ="button" value = "delete" onClick = {()=>{
+                props.onDelete(userdata[i].id)
+            }}></input>
+            </pre>
         )
         
     }

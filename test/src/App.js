@@ -4,20 +4,19 @@ import React from 'react';
 import ReadContent from "./components/Readcontent";
 import CreateContent from "./components/Createcontent";
 import UpdateContent from "./components/UpdateContent";
-import Control from "./components/Control";
 
 class App extends React.Component {  
   constructor(props){
     super(props);
     this.state = {
-      mode:'default'
+      mode:'default'      
     }
   }
   getContent(){
-    var _article,_selectedMember = null;
+    var _article = null;
     if(this.state.mode === "default"){
       _article = <ReadContent onUpdate= {(_id)=>{
-        fetch('http://localhost:3001/member/update' ,{
+        fetch('member/update' ,{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -27,13 +26,28 @@ class App extends React.Component {
           })
         }) 
         .then(res=>res.json())
-        .then(data=>_selectedMember =data) 
-        .then(this.setState({mode:'update'})
-        )
+        .then(data=>this.setState({
+          seletedMember:data,
+          mode:'update'}))     
+      }} onDelete = {(_id)=>{
+        if(window.confirm('really?')){
+          fetch('member/delete' ,{
+            method : "POST",
+            headers: {
+              'Content-Type': 'application/json',
+              },        
+            body : JSON.stringify({
+              'id' : _id
+            })     
+          })
+          .then(response =>{
+            this.setState({mode:'default'})
+          })
+        }
       }}></ReadContent> 
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
-        fetch('http://localhost:3001/member/create' ,{
+        fetch('member/create' ,{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -48,7 +62,8 @@ class App extends React.Component {
         })      
       }}></CreateContent>
     }else if(this.state.mode === 'update'){
-      _article = <UpdateContent></UpdateContent>
+      console.log(`App SelectedMember : ${this.state.seletedMember}`)
+      _article = <UpdateContent selectedMember={this.state.seletedMember}></UpdateContent>
     }
     
     return _article;
@@ -58,9 +73,6 @@ class App extends React.Component {
   return (
     <div className="App">
       {this.getContent()}
-      <Control onChangeMode = {(_mode)=>{
-        this.setState({mode:_mode})
-      }}></Control>
     </div>
   );
 }

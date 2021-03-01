@@ -27,5 +27,14 @@ router.post("/update",(req,res,next)=>{
     //console.log("Selected member : ",member);
     res.json(member);
 })
+router.post('/delete',(req,res,next)=>{
+    let id = req.body.id;
+    if(db.get('members').remove({id:id}).write()){
+        res.end(console.log('delete complete!!'))
+    }
+    else{
+        res.end(console.log('error occured!!'))
+        }  
+})
 
 module.exports = router;
