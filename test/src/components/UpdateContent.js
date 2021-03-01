@@ -1,14 +1,15 @@
 import React,{useState,useEffect} from 'react';
 
 function UpdateContent(props){
+    console.log("UpdateContent render")
     const [member, setMember] = useState({});
     useEffect(()=>{
         fetch('member/update')
         .then(res=>res.json())
-        .then(data=>setmember(data))
+        .then(data=>setMember(data))
     },[]);
 
-    let _member = data;
+    
     return(
         <form action = "update_process" method = "post" ouSubmit={(e)=>{
             e.preventdefault();
@@ -17,9 +18,10 @@ function UpdateContent(props){
                 e.target.dept.value
             )
         }}>
-        <pre>username : <input type = "text" name = "username">{_member.username}</input>
+        <pre>username : <input type = "text" name = "username">{member.username}</input>
         department : <input type = "text" name = "dept">{member.dept}</input></pre>
         
         </form>
     )
 }
+export default UpdateContent;

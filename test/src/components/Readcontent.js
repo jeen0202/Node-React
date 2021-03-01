@@ -16,7 +16,10 @@ function ReadContent(props){
         lists.push(        
         <pre class = "list">id : {userdata[i].id}<br></br>
             name : {userdata[i].username}<br></br>
-            dept : {userdata[i].dept}</pre>
+            dept : {userdata[i].dept}<br></br>
+            <input type = "button" value = "update" onClick = {()=>{
+                props.onUpdate(userdata[i].id)
+            }}></input></pre>
         )
         
     }

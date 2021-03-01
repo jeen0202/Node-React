@@ -3,6 +3,7 @@ import React from 'react';
 
 import ReadContent from "./components/Readcontent";
 import CreateContent from "./components/Createcontent";
+import UpdateContent from "./components/UpdateContent";
 import Control from "./components/Control";
 
 class App extends React.Component {  
@@ -13,9 +14,15 @@ class App extends React.Component {
     }
   }
   getContent(){
-    var _article = null;
+    var _article,_selectedMember = null;
     if(this.state.mode === "default"){
-      _article = <ReadContent></ReadContent> 
+      _article = <ReadContent onUpdate= {(_id)=>{
+        fetch('http://locahhost:3001/member/update')
+        .then(res=>res.json())
+        .then(data=>_selectedMember =data) 
+        .then(this.setState({mode:'update'})
+        )
+      }}></ReadContent> 
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
         fetch('http://localhost:3001/member/create' ,{
@@ -32,6 +39,8 @@ class App extends React.Component {
           this.setState({mode:'default'})
         })      
       }}></CreateContent>
+    }else if(this.state.mode === 'update'){
+      _article = <UpdateContent></UpdateContent>
     }
     
     return _article;
