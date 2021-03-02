@@ -4,20 +4,18 @@ class Control extends Component{
     render(){      
       console.log('Control render');
       return(
-        <ul>
-        <li><a href="/create" onClick={(e)=>{
+        <pre>
+        <input type ="button" value = "Create" onClick={(e)=>{
           e.preventDefault();
           this.props.onChangeMode('create')
-        }}>create</a></li>
-       <li><a href="/update" onClick={(e)=>{
+        }}></input>  <input type ="button" value = "Login" onClick={(e)=>{
           e.preventDefault();
-          this.props.onChangeMode('update')
-        }}>update</a></li>
-        <li><input type ="button" value = "delete" onClick={(e)=>{
+          this.props.onChangeMode('login')
+        }}></input>  <input type ="button" value = "Register" onClick={(e)=>{
           e.preventDefault();
-          this.props.onChangeMode('delete')
-        }}></input></li>
-        </ul>
+          this.props.onChangeMode('register')
+        }}></input>
+        </pre>
       );
     }
   }

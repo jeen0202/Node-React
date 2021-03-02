@@ -4,6 +4,7 @@ import React from 'react';
 import ReadContent from "./components/Readcontent";
 import CreateContent from "./components/Createcontent";
 import UpdateContent from "./components/UpdateContent";
+import Control from './components/Control';
 
 class App extends React.Component {  
   constructor(props){
@@ -88,6 +89,10 @@ class App extends React.Component {
     console.log('App render')
   return (
     <div className="App">
+      <p>Hello Node&React!!!</p>
+      <Control onChangeMode ={(_mode)=>{
+        this.setState({mode:_mode})
+      }}></Control>
       {this.getContent()}
     </div>
   );

@@ -32,7 +32,6 @@ function ReadContent(props){
     if(isContent){ 
         return(
             <div>
-            <p>Hello Node&React!!!</p>
             {lists}
             </div>            
                       
