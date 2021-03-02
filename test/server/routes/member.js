@@ -27,6 +27,16 @@ router.post("/update",(req,res,next)=>{
     //console.log("Selected member : ",member);
     res.json(member);
 })
+router.post("/update_process",(req,res,next)=>{
+    let member = {
+        "id" : req.body.id,
+        "username" : req.body.username,
+        "dept" : req.body.dept
+    }
+    console.log("Update MEmber : ",member)
+    db.get('members').find({id:member.id}).assign(member).write();
+    res.end(console.log('update Complete'))
+})
 router.post('/delete',(req,res,next)=>{
     let id = req.body.id;
     if(db.get('members').remove({id:id}).write()){

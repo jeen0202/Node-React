@@ -63,7 +63,23 @@ class App extends React.Component {
       }}></CreateContent>
     }else if(this.state.mode === 'update'){
       console.log(`App SelectedMember : ${this.state.seletedMember}`)
-      _article = <UpdateContent selectedMember={this.state.seletedMember}></UpdateContent>
+      _article = <UpdateContent selectedMember={this.state.seletedMember} onUpdate ={(_id,_username,_dept)=>{
+        console.log(`App update => ${_id} ${_username} ${_dept}`)
+        fetch('member/update_process',{
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json',            
+          },
+          body : JSON.stringify({
+            'id' : _id,
+            'username' : _username,
+            'dept' : _dept
+          })
+        })
+        .then(response => {
+          this.setState({mode:'default'})
+        })
+      }}></UpdateContent>
     }
     
     return _article;
