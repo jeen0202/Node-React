@@ -33,7 +33,7 @@ router.post("/update_process",(req,res,next)=>{
         "username" : req.body.username,
         "dept" : req.body.dept
     }
-    console.log("Update MEmber : ",member)
+    console.log("Update Member : ",member)
     db.get('members').find({id:member.id}).assign(member).write();
     res.end(console.log('update Complete'))
 })

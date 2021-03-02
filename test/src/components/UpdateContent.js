@@ -1,11 +1,8 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 
 function UpdateContent(props){
     console.log("UpdateContent render")
-    const [member, setMember] = useState({});
-    useEffect(()=>{
-        setMember(props.selectedMember)         
-    },[props]);
+    const [member, setMember] = useState(props.selectedMember);
     const handleSubmit = (e) => {
         setMember({[e.target.name]:e.target.value})
     }
@@ -13,11 +10,17 @@ function UpdateContent(props){
     return(
         <form action = "update_process" method = "post" onSubmit={(e)=>{
             e.preventDefault();
-            props.onUpdate(e.target.id.value,e.target.username.value,e.target.dept.value)
-        }}>
-        <input type = "hidden" name = "id" value = {member.id}></input>
+            console.log(e.target.id.value);
+            let member = {
+                'id' : e.target.id.value,
+                'username' : e.target.username.value,
+                'dept' : e.target.dept.value
+            }
+            props.onUpdate(member)
+        }}>        
         username : <input type = "text" name = "username" value = {member.username} onChange={handleSubmit}></input>
         department : <input type = "text" name = "dept" value = {member.dept} onChange={handleSubmit}></input>
+        <input type = 'hidden' name = "id" value = {member.id}></input>
         <input type = "submit" value = "update"></input>        
         </form>
     )
