@@ -10,9 +10,8 @@ function UpdateContent(props){
     return(
         <form action = "update_process" method = "post" onSubmit={(e)=>{
             e.preventDefault();
-            console.log(e.target.id.value);
             let member = {
-                'id' : e.target.id.value,
+                'id' : Number(e.target.id.value),
                 'username' : e.target.username.value,
                 'dept' : e.target.dept.value
             }
