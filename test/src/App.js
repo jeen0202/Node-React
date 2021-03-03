@@ -5,6 +5,7 @@ import ReadContent from "./components/Readcontent";
 import CreateContent from "./components/Createcontent";
 import UpdateContent from "./components/UpdateContent";
 import Control from './components/Control';
+import LoginContent from './components/LoginContent';
 
 class App extends React.Component {  
   constructor(props){
@@ -81,8 +82,11 @@ class App extends React.Component {
           this.setState({mode:'default'})
         })
       }}></UpdateContent>
+    }else if(this.state.mode === 'login'){
+      _article = <LoginContent onLogin ={(_user)=>{
+        console.log(`id : ${_user.id} password : ${_user.pass}`);
+      }}></LoginContent>
     }
-    
     return _article;
   }
   render(){

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import './compenents.css';
+import "./components.css"
 
 function LoginContent(props){
     console.log('LoginContent render');
@@ -13,7 +13,7 @@ function LoginContent(props){
                 'id' : e.target.id.value,
                 'pass' : e.target.pass.value
             }
-
+            props.onLogin(user);
         }}>
         id : <input type = "text" name = "id"></input>
         password : <input type ="password" name = "pass"></input>
@@ -22,3 +22,4 @@ function LoginContent(props){
     )
 
 }
+export default LoginContent;
