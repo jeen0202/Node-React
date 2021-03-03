@@ -1,11 +1,9 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import "./components.css"
 
 function LoginContent(props){
     console.log('LoginContent render');
-    const handleSubmit = (e) => {
-        e.target.name = e.target.value;
-    }
+    
     return(
         <form action = "login_process" method = "post" onSubmit = {(e)=>{
             e.preventDefault();

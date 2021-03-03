@@ -85,6 +85,19 @@ class App extends React.Component {
     }else if(this.state.mode === 'login'){
       _article = <LoginContent onLogin ={(_user)=>{
         console.log(`id : ${_user.id} password : ${_user.pass}`);
+        fetch('auth/login_process',{
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json',            
+          },
+          body : JSON.stringify({
+            'id' : _user.id,
+            'pass' : _user.pass
+          })
+        })
+        .then(response => {
+          this.setState({mode:'default'})
+        })
       }}></LoginContent>
     }
     return _article;
