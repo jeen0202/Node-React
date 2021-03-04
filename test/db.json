@@ -6,5 +6,11 @@
       "dept": "developer"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": "jeen0202",
+      "pass": "111111",
+      "nickname": "sejing"
+    }
+  ]
 }

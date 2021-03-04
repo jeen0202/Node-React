@@ -6,6 +6,7 @@ import CreateContent from "./components/Createcontent";
 import UpdateContent from "./components/UpdateContent";
 import Control from './components/Control';
 import LoginContent from './components/LoginContent';
+import RegisterContent from "./components/RegisterContent";
 
 class App extends React.Component {  
   constructor(props){
@@ -99,6 +100,23 @@ class App extends React.Component {
           this.setState({mode:'default'})
         })
       }}></LoginContent>
+    }else if(this.state.mode === "register"){
+      _article = <RegisterContent onRegister = {(_user)=>{
+        console.log(`RegisterContent => ${_user.id} ${_user.pass} ${_user.nickname}`)
+        fetch('server/auth/register_process',{
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json',            
+          },
+          body : JSON.stringify({
+            'id' : _user.id,
+            'pass' : _user.pass,
+            'nickname' : _user.nickname
+          })
+        }).then(response=>{
+          this.setState({mode:'default'})
+          })
+      }}></RegisterContent>
     }
     return _article;
   }
