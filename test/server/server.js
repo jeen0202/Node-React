@@ -17,8 +17,8 @@ const authRouter = require('./routes/auth')
 
 app.use(cors());
 app.use(indexRouter);
-app.use('/member', memberRouter);
-app.use('/auth' , authRouter);
+app.use('/server/member', memberRouter);
+app.use('/server/auth' , authRouter);
 app.listen(port, () => {
     console.log(`listen on port ${port}`);
 })

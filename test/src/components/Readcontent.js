@@ -5,7 +5,7 @@ function ReadContent(props){
     const [isContent, setIsContent] = useState(true);
     const [userdata, setUserdata] = useState({});
     useEffect(()=>{        
-        fetch('/member/read')
+        fetch('server/member/read')
         .then(res=>res.json())
         .then(data=>setUserdata(data))         
        

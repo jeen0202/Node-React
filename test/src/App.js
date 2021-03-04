@@ -18,7 +18,7 @@ class App extends React.Component {
     var _article = null;
     if(this.state.mode === "default"){
       _article = <ReadContent onUpdate= {(_id)=>{
-        fetch('member/update' ,{
+        fetch('server/member/update' ,{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ class App extends React.Component {
           mode:'update'}))     
       }} onDelete = {(_id)=>{
         if(window.confirm('really?')){
-          fetch('member/delete' ,{
+          fetch('server/member/delete' ,{
             method : "POST",
             headers: {
               'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ class App extends React.Component {
       }}></ReadContent> 
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
-        fetch('member/create' ,{
+        fetch('server/member/create' ,{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ class App extends React.Component {
       console.log(`App SelectedMember : ${this.state.seletedMember}`)
       _article = <UpdateContent selectedMember={this.state.seletedMember} onUpdate ={(_member)=>{
         console.log(`App update => ${_member}`)
-        fetch('member/update_process',{
+        fetch('server/member/update_process',{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',            
@@ -85,7 +85,7 @@ class App extends React.Component {
     }else if(this.state.mode === 'login'){
       _article = <LoginContent onLogin ={(_user)=>{
         console.log(`id : ${_user.id} password : ${_user.pass}`);
-        fetch('auth/login_process',{
+        fetch('server/auth/login_process',{
           method : "POST",
           headers: {
             'Content-Type': 'application/json',            
