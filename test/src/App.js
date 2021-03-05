@@ -12,7 +12,8 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      mode:'default'      
+      mode:'default',
+      is_login :false      
     }
   }
   getContent(){
@@ -96,9 +97,8 @@ class App extends React.Component {
             'pass' : _user.pass
           })
         })
-        .then(response => {
-          this.setState({mode:'default'})
-        })
+        .then(res => res.json())
+        .then(data=>this.setState({mode:'default',is_login:data}))
       }}></LoginContent>
     }else if(this.state.mode === "register"){
       _article = <RegisterContent onRegister = {(_user)=>{
@@ -125,7 +125,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <p>Hello Node&React!!!</p>
-      <Control onChangeMode ={(_mode)=>{
+      <Control is_login = {this.state.is_login} onChangeMode ={(_mode)=>{
         this.setState({mode:_mode})
       }}></Control>
       {this.getContent()}
