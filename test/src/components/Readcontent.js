@@ -14,7 +14,7 @@ function ReadContent(props){
     let lists= [];
     for(let i = 0; i<userdata.length;i++){
         lists.push(        
-        <pre class = "list">id : {userdata[i].id}<br></br>
+        <pre className = "list">id : {userdata[i].id}<br></br>
             name : {userdata[i].username}<br></br>
             dept : {userdata[i].dept}<br></br>
             <input type = "button" value = "update" onClick = {()=>{

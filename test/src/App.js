@@ -130,6 +130,8 @@ class App extends React.Component {
       <p>Hello Node&React!!!</p>
       <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
         this.setState({mode:_mode})
+      }} onLogout = {()=>{
+        this.setState({is_login:false})
       }}></Control>
       {this.getContent()}
     </div>
