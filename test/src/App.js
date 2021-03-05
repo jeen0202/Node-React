@@ -98,7 +98,10 @@ class App extends React.Component {
           })
         })
         .then(res => res.json())
-        .then(data=>this.setState({mode:'default',is_login:data}))
+        .then(data=>this.setState({
+          mode:'default',
+          is_login:data.is_Login,
+          nickname:data.nickname}))
       }}></LoginContent>
     }else if(this.state.mode === "register"){
       _article = <RegisterContent onRegister = {(_user)=>{
@@ -125,7 +128,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <p>Hello Node&React!!!</p>
-      <Control is_login = {this.state.is_login} onChangeMode ={(_mode)=>{
+      <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
         this.setState({mode:_mode})
       }}></Control>
       {this.getContent()}

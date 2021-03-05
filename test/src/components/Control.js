@@ -5,7 +5,7 @@ class Control extends Component{
       let _control = null;      
       console.log('Control render');
       if(this.props.is_login){      
-        _control = <pre> Hello <input type ="button" value = "Create" onClick={(e)=>{
+        _control = <pre>Hello {this.props.nickname} <input type ="button" value = "Create" onClick={(e)=>{
           e.preventDefault();
           this.props.onChangeMode('create')
         }}></input> <input type = "button" value = "Logout" onClick={(e)=>{
