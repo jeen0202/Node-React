@@ -90,7 +90,8 @@ class App extends React.Component {
         fetch('server/auth/login_process',{
           method : "POST",
           headers: {
-            'Content-Type': 'application/json',            
+            'Content-Type': 'application/json',
+            'Accept' : 'applcation/json'            
           },
           body : JSON.stringify({
             'id' : _user.id,

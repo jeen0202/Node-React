@@ -1,6 +1,5 @@
 const db = require('./lowdb');
 const bcrypt = require('bcrypt');
-const passport = require('../../../myTodo/lib/passport');
 
 module.exports = (app)=>{
     let passport = require('passport')
@@ -27,7 +26,7 @@ passport.serializeUser(function(user, done) {
   },
     function(email, password, done) {   
       console.log('LocalStrategy', email, password);
-      var user = db.get('users').find({email:email}).value(); 
+      var user = db.get('users').find({id:id}).value(); 
       if(user){
         if(bcrypt.compareSync(password,user.password)){
           return done(null, user,{
