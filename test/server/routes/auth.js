@@ -5,19 +5,22 @@ let router = express.Router();
 const db = require('../../lib/lowdb')
 module.exports = function(passport){
 
-router.post('/login_process', passport.authenticate('local',{
-    failureRedirect : '/auth/login'}),
-        (req, res,next) => { 
-            console.log(`Passport => ${req.user.nickname}`)            
-        res.json(req.user)
+router.post('/login_process', passport.authenticate('local'),
+        (req, res) => { 
+            console.log(`Passport => ${req.user.nickname}`) 
+        let user = {
+            "id":req.user.id,
+            "nickname":req.user.nickname
+        }               
+        res.json(user)
         
     });
 
 // router.post('/login_process', (req,res,next)=>{
 //     let is_Login = false;
-//     let user = db.get('users').find({email:req.body.id, pass:req.body.pass}).value()
+//     let user = db.get('users').find({email:req.body.id}).value()
 //     console.log(`login Process => ${req.body.id} ${req.body.pass}`)
-//     if(user){
+//     if(bcrypt.compareSync(req.body.pass,user.pass)){
 //         console.log(`Login Complete`)        
 //         user.is_Login = true;
 //     }else{
