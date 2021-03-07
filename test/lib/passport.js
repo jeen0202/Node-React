@@ -1,10 +1,9 @@
 const db = require('./lowdb');
 const bcrypt = require('bcrypt');
+const passport = require('passport')
+,LocalStrategy = require('passport-local').Strategy;
 
 module.exports = (app)=>{
-    const passport = require('passport')
-    ,LocalStrategy = require('passport-local').Strategy;
-
 
 app.use(passport.initialize()); //passport 초기화
 app.use(passport.session());

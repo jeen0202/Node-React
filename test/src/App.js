@@ -46,6 +46,7 @@ class App extends React.Component {
           })
           .then(response =>{
             this.setState({mode:'default'})
+           
           })
         }
       }}></ReadContent> 
