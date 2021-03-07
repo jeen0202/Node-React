@@ -1,11 +1,24 @@
 {
-  "members": [],
+  "members": [
+    {
+      "id": 1,
+      "username": "김세진",
+      "dept": "manager"
+    }
+  ],
   "users": [
     {
       "id": "mLLjG7lw1NpTDmPVeTJdY",
       "email": "susu",
       "pass": "$2b$10$KRDXQ0x9nJJo2csliYbSfeSEUyqa733LhhdFOzXN/X1rf45NPupBG",
       "nickname": "susu",
+      "is_Login": true
+    },
+    {
+      "id": "Z7YSt2SSGpnt-ba3yArKF",
+      "email": "jeen0202",
+      "pass": "$2b$10$eNS9quHTjIzuO6jwf3CH5e0xJaXqpFmRLuHVBokm18C0KGcL1IehW",
+      "nickname": "sejing",
       "is_Login": true
     }
   ]

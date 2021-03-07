@@ -5,6 +5,8 @@ function LoginContent(props){
     console.log('LoginContent render');
     
     return(
+        <div className = "container">
+        <h2 className ="title">Login to your Account</h2>
         <form action = "login_process" method = "post" onSubmit = {(e)=>{
             e.preventDefault();
             let user = {
@@ -13,10 +15,12 @@ function LoginContent(props){
             }
             props.onLogin(user);
         }}>
-        id : <input type = "text" name = "id"></input>
-        password : <input type ="password" name = "pass"></input>
-        <input type = "submit" value = "login"></input>
+        <input className ="formInput" type = "text" name = "id" title="username" placeholder="username" /><br></br>
+        <input className ="formInput" type ="password" title="password" name = "pass" placeholder="password"/><br></br>
+        <input className = "formBtn" type = "submit" value = "login"></input>
+        <a className="forgot">Forgot Username?</a>
         </form>
+        </div>
     )
 
 }
