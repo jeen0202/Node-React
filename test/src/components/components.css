@@ -2,6 +2,23 @@
 
 *{box-sizing:border-box;}
 
+.mainTitle{
+  width: 100%;
+    color: #807a7a;
+    font-family: 'open sans condensed';
+    font-size: 1.35em;
+    display: block;
+    background:#2a2a2a;
+    width: 100%;
+    text-transform: uppercase;
+    padding: .75em 1em .75em 1.5em;
+    box-shadow:inset 0px 1px 1px fadeout(white, 95%);
+    border: 1px solid darken(#2a2a2a, 5%);
+    text-shadow: 0px 1px 1px darken(#2a2a2a, 5%);
+    margin: 0;
+    font-weight: 200;
+    text-align :center;
+}
 .title {
     width: 100%;
     color: #807a7a;
@@ -67,7 +84,35 @@ form {
     display: block;
     width: 100%;
     padding: 2em;
-  }    
+  }
+.listContainer{
+  width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+    
+    box-shadow: 0px 2px 5px rgba(0,0,0,.25);
+    
+    @media(max-width: 40em){
+      width: 95%;
+      position: relative;
+      margin: 2.5% auto 0 auto;
+      left: 0%;
+    -webkit-transform: translate(0%,0%);
+  -moz-transform: translate(0%,0%);
+  -o-transform: translate(0%,0%);
+  -ms-transform: translate(0%,0%);
+  transform: translate(0%,0%);
+    }
+  }      
 .container{
     width: 40%;
     min-width: 320px;

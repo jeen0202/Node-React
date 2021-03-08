@@ -17,39 +17,49 @@ class App extends React.Component {
     }
   }
   getContent(){
-    var _article = null;
+    var _article,_readContent= null;
     if(this.state.mode === "default"){
-      _article = <ReadContent onUpdate= {(_id)=>{
-        fetch('server/member/update' ,{
-          method : "POST",
-          headers: {
-            'Content-Type': 'application/json',
-            },        
-          body : JSON.stringify({
-          'id' : _id
-          })
-        }) 
-        .then(res=>res.json())
-        .then(data=>this.setState({
-          seletedMember:data,
-          mode:'update'}))     
-      }} onDelete = {(_id)=>{
-        if(window.confirm('really?')){
-          fetch('server/member/delete' ,{
+      if(this.state.is_login){
+        _readContent = <ReadContent onUpdate= {(_id)=>{
+          fetch('server/member/update' ,{
             method : "POST",
             headers: {
               'Content-Type': 'application/json',
               },        
             body : JSON.stringify({
-              'id' : _id
-            })     
-          })
-          .then(response =>{
-            this.setState({mode:'default'})
-           
-          })
-        }
-      }}></ReadContent> 
+            'id' : _id
+            })
+          }) 
+          .then(res=>res.json())
+          .then(data=>this.setState({
+            seletedMember:data,
+            mode:'update'}))     
+        }} onDelete = {(_id)=>{
+          if(window.confirm('really?')){
+            fetch('server/member/delete' ,{
+              method : "POST",
+              headers: {
+                'Content-Type': 'application/json',
+                },        
+              body : JSON.stringify({
+                'id' : _id
+              })     
+            })
+            .then(response =>{
+              this.setState({mode:'default'})
+             
+            })
+          }
+        }}></ReadContent>
+      }
+      _article = <div className ="listContainer">            
+      <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
+        this.setState({mode:_mode})
+      }} onLogout = {()=>{
+        this.setState({is_login:false})
+      }}></Control>     
+      {_readContent}
+      </div>
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
         fetch('server/member/create' ,{
@@ -129,12 +139,6 @@ class App extends React.Component {
     console.log('App render')
   return (
     <div className="App">
-      <p>Hello Node&React!!!</p>
-      <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
-        this.setState({mode:_mode})
-      }} onLogout = {()=>{
-        this.setState({is_login:false})
-      }}></Control>
       {this.getContent()}
     </div>
   );
