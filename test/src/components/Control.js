@@ -15,15 +15,11 @@ class Control extends Component{
         }}></input>
         </pre> 
       }else{
-        _control = <pre><h2 className ="mainTitle">Human Resource Management Program</h2>
-         <input type ="button" value = "Login" onClick={(e)=>{
+        _control = <pre ><h2 className ="mainTitle">Human Resource Management Program</h2>
+         <input type ="button" className="frontBtn" value = "get Started" onClick={(e)=>{
           e.preventDefault();
           this.props.onChangeMode('login')
-        }}></input>
-          <input type ="button" value = "Register" onClick={(e)=>{
-          e.preventDefault();
-          this.props.onChangeMode('register')
-        }}></input>
+        }}></input>          
         </pre>
       }
       return(        

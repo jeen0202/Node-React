@@ -114,6 +114,8 @@ class App extends React.Component {
           mode:'default',
           is_login:data.is_Login,
           nickname:data.nickname}))
+      }} onForgot ={()=>{
+        this.setState({mode :"register"})
       }}></LoginContent>
     }else if(this.state.mode === "register"){
       _article = <RegisterContent onRegister = {(_user)=>{

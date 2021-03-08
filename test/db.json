@@ -20,6 +20,12 @@
       "pass": "$2b$10$eNS9quHTjIzuO6jwf3CH5e0xJaXqpFmRLuHVBokm18C0KGcL1IehW",
       "nickname": "sejing",
       "is_Login": true
+    },
+    {
+      "id": "xeSBUUuPhVzhTjY8CPrrL",
+      "email": "admin",
+      "pass": "$2b$10$XHrWa2A0fzf7pO9ZXNSbkearpPNRBvMxOL3mN9tK0YrBuux6Gtfym",
+      "nickname": "admin"
     }
   ]
 }

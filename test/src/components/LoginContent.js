@@ -18,7 +18,9 @@ function LoginContent(props){
         <input className ="formInput" type = "text" name = "id" title="username" placeholder="username" /><br></br>
         <input className ="formInput" type ="password" title="password" name = "pass" placeholder="password"/><br></br>
         <input className = "formBtn" type = "submit" value = "login"></input>
-        <a className="forgot">Forgot Username?</a>
+        <a className="forgot" onClick={()=>{
+            props.onForgot();
+        }}>Forgot Username?</a>
         </form>
         </div>
     )
