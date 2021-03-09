@@ -29,16 +29,25 @@ function ReadContent(props){
                    
     
     if(!userdata){setIsContent(false)}
-    if(isContent){ 
+    if(props.is_login){
+        if(isContent){         
         return(
-            <div>            
-            {lists}
+            <div>
+                <h2 className = "mainTitle">Hello {props.nickname}</h2>            
+                {lists}
             </div>            
                       
-        )
+            )
+        }else{
+            return(<div>
+            <h2 className = "mainTitle">Hello {props.nickname}</h2>
+            </div> );         
+        }   
     }
     else{
-        return(null);
+        return(<div>
+        <h2 className ="mainTitle">Human Resource Management Program</h2>
+    </div>);
     }
 }
 export default ReadContent;

@@ -9,7 +9,7 @@ import LoginContent from './components/LoginContent';
 import RegisterContent from "./components/RegisterContent";
 
 class App extends React.Component {  
-  constructor(props){
+  constructor(props){ 
     super(props);
     this.state = {
       mode:'default',
@@ -52,14 +52,17 @@ class App extends React.Component {
           }
         }}></ReadContent>
       }
-      _article = <div className ="listContainer">            
+      _article = <article>
+      <readCotent className="listContainer">      
+      {_readContent}
+      </readCotent>
       <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
         this.setState({mode:_mode})
       }} onLogout = {()=>{
         this.setState({is_login:false})
-      }}></Control>     
-      {_readContent}
-      </div>
+      }}></Control>       
+      </article>
+      
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
         fetch('server/member/create' ,{

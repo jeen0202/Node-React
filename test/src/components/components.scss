@@ -46,17 +46,18 @@
     color: white;
     margin-top : 15%;      
     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
-  }
-  .frontBtn:hover {
+    &:hover {
       background: #147a81;
+    }
+    &:active {
+        background: #1fb5bf; 
+        box-shadow: inset 0px 1px 1px fadeout(black, 90%); 
+    }
+    &:focus {
+    outline: none;
+    }
   }
-  .frontBtn:active {
-      background: #1fb5bf; 
-      box-shadow: inset 0px 1px 1px fadeout(black, 90%); 
-  }
-  .frontBtn:focus {
-  outline: none;
-  }
+
   .formBtn {
     display: inline-block;
     background:#1fb5bf;
@@ -75,6 +76,10 @@
     &:focus {
       outline: none;
     }
+  }
+  .controlBtn {
+    @extend .formBtn;
+    text-align: center;
   }
   .formInput {    
     display: block;
@@ -99,7 +104,7 @@ body {
     background-size: cover;
   }
 .list{    
-    background-color: blanchedalmond;    
+    background-color: white;    
 }
     
 form {
@@ -165,6 +170,17 @@ form {
   transform: translate(0%,0%);
     }
   }
+  .controlContainer{
+    text-align: center;
+  width: 100%;
+  height : 70%;
+    min-width: 200px;
+    max-width: 475px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+  }
   .forgot {
     color: #1fb5bf;
     line-height: .5em;
@@ -178,8 +194,6 @@ form {
     
     &:hover {
       color:darken(#1fb5bf, 5%);
-    }
-    &:active{ 
     }
   }
 
