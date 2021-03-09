@@ -1,5 +1,5 @@
 import React from 'react';
-import "./components.css"
+import "./components.scss"
 
 function LoginContent(props){
     console.log('LoginContent render');
@@ -18,9 +18,9 @@ function LoginContent(props){
         <input className ="formInput" type = "text" name = "id" title="username" placeholder="username" /><br></br>
         <input className ="formInput" type ="password" title="password" name = "pass" placeholder="password"/><br></br>
         <input className = "formBtn" type = "submit" value = "login"></input>
-        <a className="forgot" onClick={()=>{
+        <div className="forgot" onClick={()=>{
             props.onForgot();
-        }}>Forgot Username?</a>
+        }}>Forgot Username?</div>
         </form>
         </div>
     )

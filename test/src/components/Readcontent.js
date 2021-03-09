@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import './components.css';
+import './components.scss';
 function ReadContent(props){
     console.log('ReadContent render');
     const [isContent, setIsContent] = useState(true);

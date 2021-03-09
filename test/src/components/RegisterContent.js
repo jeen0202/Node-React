@@ -1,5 +1,5 @@
 import React from 'react';
-import "./components.css"
+import "./components.scss"
 
 function RegisterContent(props){
     console.log('RegisterContent render');

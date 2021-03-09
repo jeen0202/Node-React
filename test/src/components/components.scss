@@ -45,17 +45,17 @@
     padding: .5em 2em;
     color: white;
     margin-top : 15%;      
-    box-shadow: inset 0px 1px 0px fadeout(white, 80%); 
-    &:hover {
-      background: lighten(#1fb5bf, 5%);
-    }
-    &:active {
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  }
+  .frontBtn:hover {
+      background: #147a81;
+  }
+  .frontBtn:active {
       background: #1fb5bf; 
       box-shadow: inset 0px 1px 1px fadeout(black, 90%); 
-    }
-    &:focus {
-      outline: none;
-    } 
+  }
+  .frontBtn:focus {
+  outline: none;
   }
   .formBtn {
     display: inline-block;

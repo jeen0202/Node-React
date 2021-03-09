@@ -26,6 +26,12 @@
       "email": "admin",
       "pass": "$2b$10$XHrWa2A0fzf7pO9ZXNSbkearpPNRBvMxOL3mN9tK0YrBuux6Gtfym",
       "nickname": "admin"
+    },
+    {
+      "id": "2J4njHg1xmddzo7PA6ugG",
+      "email": "",
+      "pass": "$2b$10$Eg1h6qYBqSJGKcTfCTR0OO.xnEG985ZrEvXvSq4N5EvErm3eCf4bC",
+      "nickname": ""
     }
   ]
 }
