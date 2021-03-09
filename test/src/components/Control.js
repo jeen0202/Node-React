@@ -6,7 +6,7 @@ class Control extends Component{
       console.log('Control render');
       if(this.props.is_login){      
         _control = 
-        <control className ="controlContainer">
+        <p className ="controlContainer">
         <input className ="controlBtn" type ="button" value = "Create" onClick={(e)=>{
           e.preventDefault();
           this.props.onChangeMode('create')
@@ -14,7 +14,7 @@ class Control extends Component{
           e.preventDefault();
           this.props.onLogout();
         }}></input>        
-        </control> 
+        </p> 
       }else{
         _control = <pre>
          <input type ="button" className="frontBtn" value = "get Started" onClick={(e)=>{

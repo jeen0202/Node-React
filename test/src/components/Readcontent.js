@@ -13,6 +13,7 @@ function ReadContent(props){
     
     let lists= [];
     for(let i = 0; i<userdata.length;i++){
+        console.log(`${userdata[i].id} ${userdata[i]}`)
         lists.push(        
         <pre className="list" key = {userdata[i].id}>id : {userdata[i].id}<br></br>
             name : {userdata[i].username}<br></br>
@@ -29,25 +30,13 @@ function ReadContent(props){
                    
     
     if(!userdata){setIsContent(false)}
-    if(props.is_login){
+    
         if(isContent){         
-        return(
-            <div>
-                <h2 className = "mainTitle">Hello {props.nickname}</h2>            
-                {lists}
-            </div>            
-                      
-            )
+        return(lists)
         }else{
-            return(<div>
-            <h2 className = "mainTitle">Hello {props.nickname}</h2>
-            </div> );         
+            return(null);         
         }   
     }
-    else{
-        return(<div>
-        <h2 className ="mainTitle">Human Resource Management Program</h2>
-    </div>);
-    }
-}
+
+
 export default ReadContent;

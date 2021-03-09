@@ -19,6 +19,16 @@
     font-weight: 200;
     text-align :center;
 }
+.loginTitle{
+  width: 100%;
+  font-family: 'open sans condensed';
+  font-size: 1.35em;
+  display: block;
+  text-transform: capitalize;
+  padding: .75em 1em .75em 1.5em;  
+  font-weight: 200;
+  text-align :left;
+}
 .title {
     width: 100%;
     color: #807a7a;
@@ -37,6 +47,7 @@
   }
   .frontBtn {
     display: inline-block;
+    position:absolute;
     text-align : center;
     align-self: center;
     align-items: center;    
@@ -44,6 +55,8 @@
     border: 1px solid darken(#1fb5bf, 5%);
     padding: .5em 2em;
     color: white;
+    left:45%;
+    top:20%;
     margin-top : 15%;      
     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
     &:hover {
@@ -115,9 +128,10 @@ form {
 .listContainer{
   text-align: center;
   width: 100%;
-  height : 40%;
+  height : 30%;
     min-width: 200px;
     max-width: 475px;
+    max-height: 600px;
     background: #fff;
     position: absolute;
     top: 30%;
@@ -177,9 +191,9 @@ form {
     min-width: 200px;
     max-width: 475px;
     background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 30%;
+    position: sticky ;
+    left: 20%;
+    
   }
   .forgot {
     color: #1fb5bf;

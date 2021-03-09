@@ -4,6 +4,16 @@
       "id": 1,
       "username": "jieun",
       "dept": "web dev"
+    },
+    {
+      "id": 2,
+      "username": "Song-SR",
+      "dept": "manager"
+    },
+    {
+      "id": 3,
+      "username": "hansol",
+      "dept": "developer"
     }
   ],
   "users": [

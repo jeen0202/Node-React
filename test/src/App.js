@@ -17,7 +17,7 @@ class App extends React.Component {
     }
   }
   getContent(){
-    var _article,_readContent= null;
+    var _article,_readContent, title= null;
     if(this.state.mode === "default"){
       if(this.state.is_login){
         _readContent = <ReadContent onUpdate= {(_id)=>{
@@ -51,17 +51,22 @@ class App extends React.Component {
             })
           }
         }}></ReadContent>
+        title = <h2 className = "loginTitle">Hello {this.state.nickname}!!</h2>;
+      }else{
+        title = <h2 className = "mainTitle">Human Resource Management Program</h2>
       }
-      _article = <article>
-      <readCotent className="listContainer">      
+      _article =      
+      <p className="listContainer">
+      {title}      
       {_readContent}
-      </readCotent>
       <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
         this.setState({mode:_mode})
       }} onLogout = {()=>{
         this.setState({is_login:false})
-      }}></Control>       
-      </article>
+      }}></Control> 
+      </p>
+            
+      
       
     }else if(this.state.mode === "create"){
       _article = <CreateContent onCreate = {(_username,_dept)=>{
