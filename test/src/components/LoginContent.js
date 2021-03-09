@@ -20,7 +20,7 @@ function LoginContent(props){
         <input className = "formBtn" type = "submit" value = "login"></input>
         <div className="forgot" onClick={()=>{
             props.onForgot();
-        }}>Forgot Username?</div>
+        }}>Don't have Account?</div>
         </form>
         </div>
     )

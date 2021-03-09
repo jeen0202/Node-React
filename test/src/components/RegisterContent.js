@@ -12,17 +12,16 @@ function RegisterContent(props){
                 let user = {
                     'id' : e.target.id.value,
                     'pass' : e.target.pass.value,
-                    'nickname' : e.target.nickname.value
+                    'nickname' : e.target.nickname.value,
+                    'passcheck' : e.target.passcheck.value
                 }
                 props.onRegister(user);
             }}>
-                <p>           
-                <input className ="formInput" type = "text" name = "id" placeholder = "ID"></input>
-                </p><p>
-                <input className ="formInput" type ="password" name = "pass" placeholder = "PASSWORD"></input>
-                </p><p>
-                <input className ="formInput" type ="text" name = "nickname" placeholder = "NICKNAME"></input>
-                </p>
+                           
+                <input className ="formInput" type = "text" name = "id" placeholder = "ID"></input>            
+                <input className ="formInput" type ="password" name = "pass" placeholder = "PASSWORD"></input>                
+                <input className ="formInput" type ="password" name = "passcheck" placeholder = "PASSWORD CHECK"></input>
+                <input className ="formInput" type ="text" name = "nickname" placeholder = "NICKNAME"></input>                
                 <input className = "formBtn" type = "submit" value = "Register"></input>
             </form>
         </div>

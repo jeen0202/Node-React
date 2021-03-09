@@ -85,11 +85,7 @@ class App extends React.Component {
           headers: {
             'Content-Type': 'application/json',            
           },
-          body : JSON.stringify({
-            'id' : _member.id,
-            'username' : _member.username,
-            'dept' : _member.dept
-          })
+          body : JSON.stringify(_member)
         })
         .then(response => {
           this.setState({mode:'default'})
@@ -104,10 +100,7 @@ class App extends React.Component {
             'Content-Type': 'application/json',
             'Accept' : 'applcation/json'            
           },
-          body : JSON.stringify({
-            'id' : _user.id,
-            'pass' : _user.pass
-          })
+          body : JSON.stringify(_user)
         })
         .then(res => res.json())
         .then(data=>this.setState({
@@ -125,11 +118,7 @@ class App extends React.Component {
           headers: {
             'Content-Type': 'application/json',            
           },
-          body : JSON.stringify({
-            'id' : _user.id,
-            'pass' : _user.pass,
-            'nickname' : _user.nickname
-          })
+          body : JSON.stringify(_user)
         }).then(response=>{
           this.setState({mode:'default'})
           })

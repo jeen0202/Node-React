@@ -34,11 +34,17 @@ router.post('/login_process', (req,res,next)=>{
     
 })
 router.post('/register_process',(req,res,next)=>{
-    console.log(`register ${req.body.id} ${req.body.pass} ${req.body.nickname}`)
+    console.log(`register ${req.body.id} ${req.body.pass} ${req.body.nickname} ${req.body.passcheck}`)
     let post = req.body;
     let email = post.id;
     let pass = post.pass;
+    let passcheck = post.passcheck;
     let nickname = post.nickname
+    if(!nickname){
+        nickname = email;
+    }
+    if(email){
+     if(pass===passcheck){
     bcrypt.hash(pass, 10, function(err,hash){
         db.get('users').push({
             id:nanoid,
@@ -47,7 +53,11 @@ router.post('/register_process',(req,res,next)=>{
             nickname:nickname
         }).write();
         res.end(console.log("register complete"))
-    })
+    })}else{
+        res.end(console.log("register Fail => Password Inconsistence!!"))
+    }}else{
+        res.end(console.log("register Fail => Empty Email!!"))
+    }
 })
     return router;
 }
