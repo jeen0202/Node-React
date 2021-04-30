@@ -47,7 +47,7 @@
   }
   .frontBtn {
     display: inline-block;
-    position:absolute;
+    position:sticky;
     text-align : center;
     align-self: center;
     align-items: center;    
@@ -55,9 +55,9 @@
     border: 1px solid darken(#1fb5bf, 5%);
     padding: .5em 2em;
     color: white;
-    left:45%;
-    top:20%;
-    margin-top : 15%;      
+    left:40%;
+    margin-bottom:10%; 
+    margin-top : 10%;      
     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
     &:hover {
       background: #147a81;
