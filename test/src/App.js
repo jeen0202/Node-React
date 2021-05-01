@@ -56,15 +56,15 @@ class App extends React.Component {
         title = <h2 className = "mainTitle">Human Resource Management Program</h2>
       }
       _article =      
-      <p className="listContainer">
-      {title}      
-      {_readContent}
-      <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
-        this.setState({mode:_mode})
-      }} onLogout = {()=>{
-        this.setState({is_login:false})
-      }}></Control> 
-      </p>
+      <pre className="listContainer">
+        {title}           
+        {_readContent}
+        <Control is_login = {this.state.is_login} nickname = {this.state.nickname} onChangeMode ={(_mode)=>{
+          this.setState({mode:_mode})
+        }} onLogout = {()=>{
+          this.setState({is_login:false})
+        }}></Control>         
+      </pre>
             
       
       

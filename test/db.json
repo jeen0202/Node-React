@@ -42,6 +42,12 @@
       "email": "Song-SR",
       "pass": "$2b$10$.6Z0upJj.El5C67V2V3ir.LCbhTGbdQbqvbDtpppxV0PPZUljVYgy",
       "nickname": "Song-SR"
+    },
+    {
+      "id": "orpp6JcX0Myj2GVD9xIbF",
+      "email": "test",
+      "pass": "$2b$10$M8iac77B3hCIRqJoTLhGveLoprdOOhAlDruKVB./R8f1bkAlXMfay",
+      "nickname": "test"
     }
   ]
 }
