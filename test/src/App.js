@@ -132,6 +132,8 @@ class App extends React.Component {
         }).then(response=>{
           this.setState({mode:'default'})
           })
+      }} onReturn = {()=>{
+        this.setState({mode:"login"})
       }}></RegisterContent>
     }
     return _article;
