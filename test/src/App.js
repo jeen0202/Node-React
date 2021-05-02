@@ -83,6 +83,8 @@ class App extends React.Component {
         .then(response => {
           this.setState({mode:'default'})
         })      
+      }} onReturn = {()=> {
+        this.setState({mode :"default"})
       }}></CreateContent>
     }else if(this.state.mode === 'update'){
       console.log(`App SelectedMember : ${this.state.seletedMember}`)
