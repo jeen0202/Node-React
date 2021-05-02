@@ -3,8 +3,8 @@ import React from 'react';
 function CreateContent(props){
     console.log('CreateContent render');
     return( 
-        <article>
-            <h2>Create</h2>
+        <pre className="listContainer">
+            <h2 className="mainTitle">Create Member</h2>
             <form action = "create_process" mothcd = "post" onSubmit={(e)=>{
                 e.preventDefault();                
                 props.onCreate(
@@ -12,17 +12,13 @@ function CreateContent(props){
                     e.target.dept.value
                 )
             }}> 
-                <p> 
-                    username :   
-                    <input type= "text" name = "username"></input>
-                </p>
-                <p>                    
-                    department : 
-                    <input type= "text" name = "dept"></input>       
-                </p>
-                <input type = "submit" value = "Create"></input>             
+                <input className ="formInput" type = "text" name = "membername" title="username" placeholder="USERNAME" /><br></br>
+                <input className ="formInput" type = "text" name = "dept" title="department" placeholder="DEPARTMENT" /><br></br>
+                <input className = "formBtn" type = "submit" value = "Create"></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input className = "formBtn" type = "button" value = "Return"></input>
             </form>
-        </article>
+        </pre>
     )
 }
 export default CreateContent;
